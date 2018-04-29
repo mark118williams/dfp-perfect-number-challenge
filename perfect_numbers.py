@@ -23,11 +23,11 @@ def classify(number):
 
     # The number 0 cannot be perfect, abundant or deficient
     if number == 0:
-        raise NumberException('classifcation is not relevent to 0')
+        raise NumberException('0 cannot be classified')
 
     # Negative numbers cannot be perfect, abumdant or deficient 
     if number < 0:
-        raise NumberException('%s is a negative number. Classifcation is not relevent to negative numbers' %number)
+        raise NumberException('%s is a negative number. Negative numbers cannot be classified' %number)
 
     # Create an empty list and populate it with the factors of the input excluding the input itself 
     factors = []
