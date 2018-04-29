@@ -9,7 +9,7 @@ app = flask.Flask(__name__)
 @app.route('/classify-perfect-number')
 def api():
 
-	# PCreate dictionary for results so they can be returned as a json object
+	# Create dictionary for results so they can be returned as a json object
 	result = {}
 	# Take query from the URL
 	query = flask.request.args.get('number')
@@ -28,6 +28,8 @@ def api():
 		# Return an error if the input is 0 or negative 
 		except perfect_numbers.NumberException as e:
 			result['error'] = str(e)
+
+    # Present user with their orginal query 
 	result['input'] = query
 
 	return flask.jsonify(result)
